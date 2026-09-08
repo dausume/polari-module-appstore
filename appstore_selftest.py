@@ -1,7 +1,7 @@
 """
 Selftest for the Polari App Store (appstore-1).
 
-Run from polari-framework/:  python3 -m appstore.selftest_appstore
+Run from polari-framework/:  python3 -m appstore.appstore_selftest
 
 Stdlib-only (SimpleNamespace rows, fake Falcon req/resp). Covers the
 token lifecycle (hash-at-rest, single-use, expiry, revoke authz),
@@ -23,14 +23,14 @@ from appstore.appstore_api import AppStoreAPI
 from appstore.appstore_basis import (
     AppEdgeBehavior, AppShellDefinition, ShellEnrollment,
 )
-from appstore.appstore_payloads import (
+from appstore.custom.appstore_payloads import (
     deep_link, identity_payload, registration_document,
 )
 from appstore.appstore_seed import SEED_APP_SHELLS
-from appstore.appstore_tokens import (
+from appstore.custom.appstore_tokens import (
     expiry_iso, hash_secret, judge, mint, split_wire,
 )
-from appstore.shell_project import overlay_tar_gz
+from appstore.custom.shell_project import overlay_tar_gz
 
 _results = []
 
@@ -476,7 +476,7 @@ if __name__ == '__main__':
     os.unlink(ca_file.name)
 
     print('== suite: ai-0 tool definitions + linkage vocabulary ==')
-    from appstore.appstore_ai import (
+    from appstore.appstore_ai_basis import (
         AI_LINKAGES, API_FAMILIES, HOSTING_KINDS, LINKAGE_STATUSES,
         tool_report)
     from appstore.appstore_seed import SEED_AI_TOOLS
@@ -513,7 +513,7 @@ if __name__ == '__main__':
               in ('live', 'unbuilt') for v in AI_LINKAGES.values()))
 
     print('== suite: ai-1 honest readiness API ==')
-    from appstore.appstore_ai import AiToolDefinition
+    from appstore.appstore_ai_basis import AiToolDefinition
     from appstore.appstore_ai_api import AiToolsAPI, ai_tools_payload
     ai_mgr = _ns(objectTables={'AiToolDefinition': {
         t['name']: AiToolDefinition(**t) for t in SEED_AI_TOOLS}},
@@ -561,7 +561,7 @@ if __name__ == '__main__':
                                  published=False)])['count'] == 0)
 
     print('== suite: ai-6 the honest hosting gauge ==')
-    from appstore.appstore_ai import (CLOUD_HOSTING_OPTIONS,
+    from appstore.appstore_ai_basis import (CLOUD_HOSTING_OPTIONS,
                                       host_check)
     ai6_req = json.loads(
         [t for t in SEED_AI_TOOLS
@@ -614,7 +614,7 @@ if __name__ == '__main__':
               for t in SEED_AI_TOOLS if t['name'] != 'localai'))
 
     print('== suite: ai-7 dated-price hosting suggestions ==')
-    from appstore.appstore_hosting import (
+    from appstore.appstore_hosting_basis import (
         HOSTING_KINDS_REMOTE, SEED_REMOTE_HOSTING,
         hosting_options_payload)
     check('ai-7: EVERY price carries its as-of date + source URL '
@@ -645,7 +645,7 @@ if __name__ == '__main__':
               ai6_req['profiles'])['count'] == 0)
 
     print('== suite: ai-9 the fork-pin ledger ==')
-    from appstore.appstore_forks import (
+    from appstore.appstore_forks_basis import (
         FORK_ROLES, FORK_STATUSES, SEED_FORK_PINS,
         fork_pins_payload)
     check('ai-9: every pin is dated (verified_at) with upstream + '

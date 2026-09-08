@@ -3,7 +3,7 @@ Selftest for the on-request app-deb generator + /downloads/apps
 page (dl-4).
 
 Run from polari-framework/:
-  PYTHONPATH=.:modules python3 -m appstore.selftest_app_debs
+  PYTHONPATH=.:modules python3 -m appstore.app_debs_selftest
 
 Function-level (no server), against a FIXTURE framework root:
 the pure-python deb's binary format (ar + control + data.tar.gz,
@@ -24,7 +24,7 @@ import tarfile
 import tempfile
 import time
 
-from appstore import app_deb_builder as builder
+from appstore.custom import app_deb_builder as builder
 from appstore import app_debs_page as page_mod
 
 _results = []

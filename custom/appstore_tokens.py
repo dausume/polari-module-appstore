@@ -1,5 +1,5 @@
 """
-@module appstore.appstore_tokens
+@module appstore.custom.appstore_tokens
 
 Pure enrollment-token logic — mint, hash, verify, expiry. No Falcon,
 no DB, no framework imports, so the selftest runs stdlib-only.

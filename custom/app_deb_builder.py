@@ -1,5 +1,5 @@
 """
-@module appstore.app_deb_builder
+@module appstore.custom.app_deb_builder
 
 dl-4: the ON-REQUEST app-deb generator. Any module in the live
 registry (modules/polari-modules.json) becomes an installable
@@ -44,7 +44,7 @@ Design points (DOWNLOADS_PAGE_PLAN.md §dl-4, all ratified):
 
 @consumers
   - appstore.app_debs_page (/downloads/apps)
-  - appstore.selftest_app_debs
+  - appstore.app_debs_selftest
   - isle CLI `isle apps build-debs` (thin verb over this module)
 """
 
@@ -62,7 +62,7 @@ import time
 
 from moduleService import module_registry
 
-from appstore import module_requirements as modreqs
+from appstore.custom import module_requirements as modreqs
 
 BASE_VERSION = '0.1.0'
 _DEB_NAME_RE = re.compile(r'^[a-z0-9][a-z0-9+.-]+$')
@@ -719,7 +719,7 @@ def resolve_pool_file(filename):
 
 
 def main(argv):
-    """Thin CLI: python3 -m appstore.app_deb_builder <module>...
+    """Thin CLI: python3 -m appstore.custom.app_deb_builder <module>...
     (or --all). The isle CLI verb `isle apps build-debs` calls this
     — ONE implementation, no twin scripts."""
     if not argv or argv == ['--all']:

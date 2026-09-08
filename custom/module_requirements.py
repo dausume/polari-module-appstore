@@ -1,5 +1,5 @@
 """
-@module appstore.module_requirements
+@module appstore.custom.module_requirements
 
 Per-module DEPENDENCY + ENGINE accounting for the downloads
 surfaces (Dustin 2026-08-24: counting files is not honest — the
@@ -22,9 +22,9 @@ detection probe each; anything not listed renders as "no engines
 declared", which is an honest gap, not a claim of zero.
 
 @consumers
-  - appstore.app_deb_builder (manifest + offline wheel set)
+  - appstore.custom.app_deb_builder (manifest + offline wheel set)
   - appstore.app_debs_page (per-item accounting lines)
-  - appstore.selftest_module_requirements
+  - appstore.module_requirements_selftest
 """
 
 import os

@@ -1,5 +1,5 @@
 """
-@module appstore.offline_chunker
+@module appstore.custom.offline_chunker
 
 off-1 machinery: split an offline-bundle pool across CDs/DVDs/USB
 sticks (OFFLINE_INSTALL_PLAN.md — decisions 1+2 ratified: Ubuntu
@@ -30,7 +30,7 @@ builder writes says how verification stands.
 
 @consumers
   - polari-suite/build-offline-bundle.sh (via the CLI below)
-  - appstore.selftest_offline_chunker
+  - appstore.offline_chunker_selftest
   - appstore.offline_page (renders the chunks.json this emits)
 """
 
@@ -175,10 +175,10 @@ def write_manifests(plan, pool_dir, out_dir, target='',
 
 def main(argv):
     """CLI for build-offline-bundle.sh:
-      python3 -m appstore.offline_chunker plan <pool> <media> \\
+      python3 -m appstore.custom.offline_chunker plan <pool> <media> \\
           <out_dir> [--target T] [--media-label L] \\
           [--built-at DATE]
-      python3 -m appstore.offline_chunker emit <pool> <media> \\
+      python3 -m appstore.custom.offline_chunker emit <pool> <media> \\
           <chunk#> <dest> [--delete-source]
     """
     def flag(name, default=''):

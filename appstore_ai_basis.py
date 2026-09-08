@@ -1,5 +1,5 @@
 """
-@module appstore.appstore_ai
+@module appstore.appstore_ai_basis
 
 ai-0: AI tools as FIRST-CLASS store citizens (AI_TOOL_LINKAGES_PLAN
 decisions 1-6). An AiToolDefinition row says WHAT an AI tool is
@@ -18,7 +18,7 @@ whether that seam exists today (`live`) or is a planned wire
   - appstore.appstore_ai_api (/api/appstore/ai-tools)
   - islemesh.islemesh_catalog (ai-2: the derived store section)
   - polariServer defClassList (table + CRUDE)
-  - appstore.selftest_appstore
+  - appstore.appstore_selftest
 """
 
 import json

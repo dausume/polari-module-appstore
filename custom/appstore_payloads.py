@@ -1,5 +1,5 @@
 """
-@module appstore.appstore_payloads
+@module appstore.custom.appstore_payloads
 
 Builders for the shared shell contracts (plan S1-S3):
   - registration document v1 (canonical schema:
@@ -20,7 +20,7 @@ import json
 import os
 from urllib.parse import quote
 
-from appstore.appstore_tokens import now_iso
+from appstore.custom.appstore_tokens import now_iso
 
 #: Where the suite CA lands when the deploy mounts it. First
 #: readable wins; the env knob overrides.

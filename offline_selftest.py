@@ -2,7 +2,7 @@
 Selftest for the offline install page (dl-5).
 
 Run from polari-framework/:
-  PYTHONPATH=.:modules python3 -m appstore.selftest_offline
+  PYTHONPATH=.:modules python3 -m appstore.offline_selftest
 
 Function-level (no server): the honest not-built-yet state, a
 staged chunks.json rendering per-disk lists + sizes + media

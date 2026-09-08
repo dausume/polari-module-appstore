@@ -5,7 +5,7 @@ honest accounting — libraries and engines take definitive space
 that online debs install dynamically and offline debs must carry).
 
 Run from polari-framework/:
-  PYTHONPATH=.:modules python3 -m appstore.selftest_module_requirements
+  PYTHONPATH=.:modules python3 -m appstore.module_requirements_selftest
 
 Uses a fixture registry + the REAL environment for measurement
 (falcon is installed here), and a fake wheel fetcher so no network
@@ -19,9 +19,9 @@ import sys
 import tarfile
 import tempfile
 
-from appstore import app_deb_builder as builder
-from appstore import module_requirements as modreqs
-from appstore.selftest_app_debs import (_ar_member_bytes, _write,
+from appstore.custom import app_deb_builder as builder
+from appstore.custom import module_requirements as modreqs
+from appstore.app_debs_selftest import (_ar_member_bytes, _write,
                                         parse_deb)
 
 _results = []

@@ -1,5 +1,5 @@
 """
-@module appstore.downloads_shared
+@module appstore.custom.downloads_shared
 
 Shared building blocks for the server-rendered download surfaces
 (/downloads, /downloads/apps, /downloads/offline): the page shell +
@@ -15,7 +15,7 @@ pages read as one product.
   - appstore.downloads_page
   - appstore.app_debs_page   (dl-4)
   - appstore.offline_page    (dl-5)
-  - appstore.selftest_downloads
+  - appstore.downloads_selftest
 """
 
 import html

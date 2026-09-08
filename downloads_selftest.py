@@ -2,7 +2,7 @@
 Selftest for the public downloads page (dl-1 + dl-3).
 
 Run from polari-framework/:
-  PYTHONPATH=.:modules python3 -m appstore.selftest_downloads
+  PYTHONPATH=.:modules python3 -m appstore.downloads_selftest
 
 Function-level (no server): staging discovery + install ordering,
 version parsing, the rendered page's user-facing promises, the

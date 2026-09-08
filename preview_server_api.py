@@ -1,5 +1,5 @@
 """
-@module appstore.preview_server
+@module appstore.preview_server_api
 
 Dev harness: serve the FOUR real download surfaces (/downloads,
 /downloads/apps, /downloads/offline, /downloads/plan) without
@@ -11,7 +11,7 @@ here is what the instance serves, minus auth/SPA/everything else.
   cd polari-framework
   POLARI_DOWNLOADS_DIR=... POLARI_APP_DEBS_DIR=... \\
   POLARI_OFFLINE_DIR=... \\
-  PYTHONPATH=.:modules python3 -m appstore.preview_server [port]
+  PYTHONPATH=.:modules python3 -m appstore.preview_server_api [port]
 
 Binds 0.0.0.0 (LAN review from another device is the point);
 default port 8090. Serves real files: Option A/B debs download for

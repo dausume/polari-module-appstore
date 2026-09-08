@@ -2,7 +2,7 @@
 Selftest for the topology/bundle planner (dl-6).
 
 Run from polari-framework/:
-  PYTHONPATH=.:modules python3 -m appstore.selftest_planner
+  PYTHONPATH=.:modules python3 -m appstore.planner_selftest
 
 Function-level: the three wizard steps render from query params
 alone (zero JS), goal→module mapping filters to the live registry,

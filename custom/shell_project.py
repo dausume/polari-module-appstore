@@ -1,5 +1,5 @@
 """
-@module appstore.shell_project
+@module appstore.custom.shell_project
 
 The generated-download path (plan A5). The instance cannot
 cross-compile, and the grpcbridge text-only tarball cannot carry a
@@ -20,8 +20,8 @@ import io
 import json
 import tarfile
 
-from appstore.appstore_minio import get_bytes, store_status
-from appstore.appstore_tokens import now_iso
+from appstore.custom.appstore_minio import get_bytes, store_status
+from appstore.custom.appstore_tokens import now_iso
 
 
 def _readme(shell_row, doc):

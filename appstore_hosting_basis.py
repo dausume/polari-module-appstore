@@ -1,5 +1,5 @@
 """
-@module appstore.appstore_hosting
+@module appstore.appstore_hosting_basis
 
 ai-7 (Dustin): concrete remote-hosting SUGGESTIONS with PRICES —
 every price carries its AS-OF DATE and source URL, because a price
@@ -16,14 +16,14 @@ listing (marketplaces) are honestly 'unverified', never guessed.
   - appstore.appstore_ai_api (/api/appstore/ai-tools/hosting-options)
   - polari-platform-angular /ai-hosting
   - polariServer defClassList (table + CRUDE)
-  - appstore.selftest_appstore
+  - appstore.appstore_selftest
 """
 
 import json
 
 from objectTreeDecorators import treeObject, treeObjectInit
 
-from appstore.appstore_ai import host_check
+from appstore.appstore_ai_basis import host_check
 
 #: What kind of thing you'd be renting.
 HOSTING_KINDS_REMOTE = ('cpu-vps', 'gpu-vps', 'gpu-dedicated',

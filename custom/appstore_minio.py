@@ -1,5 +1,5 @@
 """
-@module appstore.appstore_minio
+@module appstore.custom.appstore_minio
 
 MinIO helpers for shell artifacts (the cad_minio idiom): one bucket,
 a _store() guard, and honest {'ok': False, suggestion} refusals when

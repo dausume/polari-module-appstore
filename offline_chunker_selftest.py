@@ -2,7 +2,7 @@
 Selftest for the offline chunk planner (off-1 machinery).
 
 Run from polari-framework/:
-  PYTHONPATH=.:modules python3 -m appstore.selftest_offline_chunker
+  PYTHONPATH=.:modules python3 -m appstore.offline_chunker_selftest
 
 Function-level: deterministic packing, capacity honesty (no chunk
 over media size), the named refusal for an unsplittable file, the
@@ -17,7 +17,7 @@ import os
 import sys
 import tempfile
 
-from appstore import offline_chunker as chunker
+from appstore.custom import offline_chunker as chunker
 from appstore import offline_page as off
 
 _results = []

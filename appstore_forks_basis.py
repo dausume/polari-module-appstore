@@ -1,5 +1,5 @@
 """
-@module appstore.appstore_forks
+@module appstore.appstore_forks_basis
 
 ai-9 (Dustin: "do we have forks of the projects we would need to
 self-host... and a page for notating all of that"): the FORK-PIN
@@ -21,7 +21,7 @@ implied covered).
   - appstore.appstore_ai_api (/api/appstore/ai-tools/fork-pins)
   - polari-platform-angular /ai-hosting (the software section)
   - polariServer defClassList (table + CRUDE)
-  - appstore.selftest_appstore
+  - appstore.appstore_selftest
 """
 
 from objectTreeDecorators import treeObject, treeObjectInit
